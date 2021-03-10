@@ -7,9 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ParserApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		SpringApplication.run(ParserApplication.class, args);
-		CSVParser csvParser = new CSVParser();
+		CSVParser csvParser = new CSVParser("order.csv", "order1.csv");
+		csvParser.csvFile();
+		csvParser.csvWriter();
 	}
 
 }
